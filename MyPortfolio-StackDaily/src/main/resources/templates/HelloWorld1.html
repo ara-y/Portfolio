@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thmeleaf.org">
+<head>
+<meta charset="UTF-8">
+<th:block th:insert="fragments/base::header"></th:block>
+<title>Insert title here</title>
+</head>
+<body style="padding-top: 20px;">
+	<th:block th:insert="fragments/topBar::topBar"></th:block>
+
+	<div class="text-center">
+	<h3 class=" mt-5" >[[${form.detailDate}]]</h3>
+	<br>
+	<h3>今日のタスク</h3>
+	<div th:each="task : ${task}">
+		<div class=" mt-5"><a th:href="@{/home/detail/task/{task}/{date}(task=${task.whatIDid},date=${form.detailDate})}">[[${task.whatIDid}]]</a></div>
+	</div>
+	<div th:each="display : ${display}">
+	
+	</div>
+	<br>
+	<br>
+	<p>日記
+	<div class="form-group">
+	<form class=" mt-5 m-5"   th:action="@{/home/detail/post}" th:object="${contents}"  method=post>
+		<textarea class="form-control" rows="15" id="dairy" name="dairy">
+		[[${display}]]	
+	</textarea>
+		<button>送信</button>
+	</form>
+	</div>
+	</div>
+	<th:block th:insert="fragments/base::scripts"></th:block>
+</body>
+</html>

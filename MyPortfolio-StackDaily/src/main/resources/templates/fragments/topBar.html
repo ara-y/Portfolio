@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thmeleaf.org">
+<head>
+<meta charset="UTF-8">
+
+<title>Insert title here</title>
+</head>
+<body>
+
+ <th:block th:fragment="topBar">
+	
+	<nav class="navbar fixed-top navbar-dark bg-dark">
+	
+	 <img style="height: 50px; width: 50px;" th:src="@{/image/logoTopBar.jpg}">
+	
+	 <div class="ml-auto">
+		<a class="p-3 text-light" th:href="@{/home}">カレンダーへ戻る</a>
+		<a class="p-3 text-light" th:href="@{/TaskSetting}">タスクを追加する</a>
+		<a class="p-3 text-light" th:href="@{/logout}">ログアウトする</a>
+	 </div>
+	</nav>
+</body>
+</html>

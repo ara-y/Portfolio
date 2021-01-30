@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thmeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+[[${displayThisDay}]]
+<div th:each = "d : ${d}" th:inline="text">
+<form th:action="@{/TaskSetting/delete}" th:object="${form}"  method=post>
+[[${d.DoneDate}]]-[[${d.whatIDid}]]- <input type="checkbox" th:field="*{deleteWhatIDid}" th:value="${d.whatIDid}">
+<button>チェックをつけたものを削除する（１つ）</button>
+</form>
+</div>
+
+
+<form th:action="@{/TaskSetting/post}" th:object="${detail}" method=post>
+内容
+<input type="text" th:field="*{whatIDid}">
+<input type="hidden" th:field="*{doneDate}" value="${d.doneDate}">
+<input type="hidden" th:field="*{contributor}" value="${d.contributor}">
+
+<button>タスクを登録</button>
+</form>
+
+<form th:action="@{/TaskSetting/post}" th:object="${form}"  method=post>
+<input type="hidden" id="nextDate" name="nextDate" value="true">
+<button>翌日のタスクに切り替える</button>
+</form>
+
+<form th:action="@{/TaskSetting/post}" th:object="${form}"  method=post>
+<input type="hidden" id="backDate" name="backDate" value="true">
+<button>昨日のタスクに切り替える</button>
+</form>
+</body>
+</html>

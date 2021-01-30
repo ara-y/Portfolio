@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thmeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+   <th:block th:insert="fragments/base::header"></th:block> 
+<link rel="stylesheet" th:href="@{/css/forHome.css}">
+<title>Insert title here</title>
+</head>
+<body style="padding-top:70px" class="font-weight-bold">
+
+   <th:block th:insert="fragments/topBar::topBar"></th:block> 
+
+<form th:action="@{/home}" th:object = "${form}" method=post class="text-center">
+
+	<label for="specifyYear">年</label>
+		<select th:field="*{specifyYear}" >
+			<option value="2020">2020</option>
+			<option value="2021">2021</option>
+			<option value="2022">2022</option>
+			<option value="2023">2023</option>
+			<option value="2024">2024</option>
+			<option value="2025">2025</option>
+		</select>
+	<label for="specifyMonth">月</label>
+		<select th:field="*{specifyMonth}" >
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+			<option value="11">11</option>
+			<option value="12">12</option>
+		</select>
+		<button>検索</button>		
+</form>
+<h1 style="margin-left: 20px;">[[${thisMonth}]]月  </h1>
+<table class="table table-bordered">
+	<tr>
+		<th scope="col">月</th>
+		<th scope="col">火</th>
+		<th scope="col">水</th>
+		<th scope="col">木</th>
+		<th scope="col">金</th>
+		<th scope="col">土</th>
+		<th scope="col">日</th>
+	</tr>
+
+	<tr>
+		<td><a href="/home/detail/1">1</a> 
+			<br>
+			<div th:each="task : ${task1}">
+				<div>[[${task.whatIDid}]]</div>
+			</div>
+		</td>
+		<td><a href="/home/detail/2">2</a>
+			<br>
+			<div th:each="task : ${task2}">
+				<div>[[${task.whatIDid}]]</div>
+			</div>		
+		</td>
+		<td><a href="/home/detail/3">3</a>
+			<br>
+			<div th:each="task : ${task3}">
+				<div>[[${task.whatIDid}]]</div>
+			</div>				
+		</td>
+		<td><a href="/home/detail/4">4</a>
+			<br>
+			<div th:each="task : ${task4}">
+				<div>[[${task.whatIDid}]]</div>
+			</div>				
+		</td>
+		<td><a href="/home/detail/5">5</a>
+			<br>
+			<div th:each="task : ${task5}">
+				<div>[[${task.whatIDid}]]</div>
+			</div>				
+		</td>
+		<td><a href="/home/detail/6">6</a>
+			<br>
+			<div th:each="task : ${task6}">
+				<div>[[${task.whatIDid}]]</div>
+			</div>				
+		</td>
+		<td><a href="/home/detail/7">7</a>
+			<br>
+			<div th:each="task : ${task7}">
+				<div>[[${task.whatIDid}]]</div>
+			</div>				
+		</td>
+	</tr>
+	
+	<tr>
+		<td><a href="/home/detail/8">8</a>
+			<br>
+			<div th:each="task : ${task8}">
+				<div>[[${task.whatIDid}]]</div>
+			</div>
+		</td>
+		
+		<td><a href="/home/detail/9">9</a>
+			<br>
+			<div th:each="task : ${task9}">
+				<div>[[${task.whatIDid}]]</div>
+			</div>
+		</td>
+		
+		<td><a href="/home/detail/10">10</a>
+			<br>
+			<div th:each="task : ${task10}">
+				<div>[[${task.whatIDid}]]</div>
+			</div>
+		</td>
+		
+		<td><a href="/home/detail/11">11</a>
+			<br>
+			<div th:each="task : ${task11}">
+				<div>[[${task.whatIDid}]]</div>
+			</div>
+		</td>
+		
+		<td><a href="/home/detail/12">12</a>
+			<br>
+			<div th:each="task : ${task12}">
+				<div>[[${task.whatIDid}]]</div>
+			</div>
+		</td>
+		
+		<td><a href="/home/detail/13">13</a>
+			<br>
+			<div th:each="task : ${task13}">
+				<div>[[${task.whatIDid}]]</div>
+			</div>
+		</td>
+		
+		<td><a href="/home/detail/14">14</a>
+			<br>
+			<div th:each="task : ${task14}">
+				<div>[[${task.whatIDid}]]</div>
+			</div>
+		</td>
+	</tr>
+
+	<tr>
+		<td><a href="/home/detail/15">15</a>
+			<br>
+			<div th:each="task : ${task15}">
+				<div>[[${task.whatIDid}]]</div>
+			</div>
+		</td>
+		
+		<td><a href="/home/detail/16">16</a>
+			<br>
+			<div th:each="task : ${task16}">
+				<div>[[${task.whatIDid}]]</div>
+			</div>
+		</td>
+		
+		<td><a href="/home/detail/17">17</a>
+			<br>
+			<div th:each="task : ${task17}">
+				<div>[[${task.whatIDid}]]</div>
+			</div>
+		</td>
+		
+		<td><a href="/home/detail/18">18</a>
+			<br>
+			<div th:each="task : ${task18}">
+				<div>[[${task.whatIDid}]]</div>
+			</div>
+		</td>
+		
+		<td><a href="/home/detail/19">19</a>
+			<br>
+			<div th:each="task : ${task19}">
+				<div>[[${task.whatIDid}]]</div>
+			</div>
+		</td>
+		
+		<td><a href="/home/detail/20">20</a>
+			<br>
+			<div th:each="task : ${task20}">
+				<div>[[${task.whatIDid}]]</div>
+			</div>
+		</td>
+		
+		<td><a href="/home/detail/21">21</a>
+			<br>
+			<div th:each="task : ${task21}">
+				<div>[[${task.whatIDid}]]</div>
+			</div>
+		</td>
+	</tr>
+	
+	<tr>
+		<td><a href="/home/detail/22">22</a>
+			<br>
+			<div th:each="task : ${task22}">
+				<div>[[${task.whatIDid}]]</div>
+			</div>
+		</td>
+		
+		<td><a href="/home/detail/23">23</a>
+			<br>
+			<div th:each="task : ${task23}">
+				<div>[[${task.whatIDid}]]</div>
+			</div>
+		</td>
+		
+		<td><a href="/home/detail/24">24</a>
+			<br>
+			<div th:each="task : ${task24}">
+				<div>[[${task.whatIDid}]]</div>
+			</div>
+		</td>
+		
+		<td><a href="/home/detail/25">25</a>
+			<br>
+			<div th:each="task : ${task25}">
+				<div>[[${task.whatIDid}]]</div>
+			</div>
+		</td>
+		
+		<td><a href="/home/detail/26">26</a>
+			<br>
+			<div th:each="task : ${task26}">
+				<div>[[${task.whatIDid}]]</div>
+			</div>
+		</td>
+		
+		<td><a href="/home/detail/27">27</a>
+			<br>
+			<div th:each="task : ${task27}">
+				<div>[[${task.whatIDid}]]</div>
+			</div>
+		</td>
+		
+		<td><a href="/home/detail/28">28</a>
+			<br>
+			<div th:each="task : ${task28}">
+				<div>[[${task.whatIDid}]]</div>
+			</div>
+		</td>
+	</tr>
+	
+	<tr>
+		<td><a href="/home/detail/29">29</a>
+			<br>
+			<div th:each="task : ${task29}">
+				<div>[[${task.whatIDid}]]</div>
+			</div>
+		</td>
+		
+		<td><a href="/home/detail/30">30</a>
+			<br>
+			<div th:each="task : ${task30}">
+				<div>[[${task.whatIDid}]]</div>
+			</div>
+		</td>
+		
+		<td><a href="/home/detail/31">31</a>
+			<br>
+			<div th:each="task : ${task31}">
+				<div>[[${task.whatIDid}]]</div>
+			</div>
+		</td>
+		
+	</tr>
+	
+</table>
+
+
+ <th:block th:insert="fragments/base::scripts"></th:block>
+<script type="text/javascript" th:src="@{/javaScript/sample.js}"></script>
+</body>
+</html>

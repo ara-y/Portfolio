@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thmeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	[[${form.detailDate}]]
+	[[${form.taskData}]]
+	<form th:action="@{/home/detail/task/post}" th:object="${detail}" method=post>
+		<textarea id="comment" name="comment">
+			[[${display}]]
+		</textarea>
+		<button>送信</button>
+	</form>
+</body>
+</html>
