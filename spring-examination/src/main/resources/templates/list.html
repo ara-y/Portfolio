@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,　initial-scale=1">
+<link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+<title>Insert title here</title>
+</head>
+<body>
+	<form th:action="@{/list}" th:object="${searchoption}" method=post>
+		<label for="option_main">品詞など</label>
+		<select th:field="*{option_main}" >
+			<option value="無">なし</option>
+			<option value="動詞">動詞</option>
+			<option value="形容詞">形容詞</option>
+			<option value="副詞">副詞</option>
+			<option value="前置詞">前置詞</option>
+			<option value="名詞">名詞</option>
+			<option value="ことわざ">ことわざ</option>
+			<option value="熟語">熟語</option>
+			<option value="接続語">接続語</option>
+		</select>
+		
+		<label for="option_sub">アルファベット順</label>
+		<select th:field="*{option_sub}">
+			<option value="0">オフ</option>
+			<option value="1">オン</option>
+		</select>
+		
+		<h3>検索</h3>
+		<input type="text" th:field="*{searchword_s}" placeholder="検索">
+		
+		<h3>日時検索(年、月、日など)</h3>
+		<input type="text" th:field="*{searchdate_s}" placeholder="検索">
+		
+	<div th:each="list : ${lists}" th:inline="text">
+		<div>[[${list.id}]]-<input  type="radio" th:field="*{toEdit}" th:value="${list.word}">[[${list.word}]]-[[${list.partofspeech}]]-[[${list.mean}]]-[[${list.date}]]
+		-<input  type="radio" th:field="*{toMove}" th:value="${list.id}">覚えた</div>
+	</div>
+	<button>送信</button> 
+	</form>
+	<p>[[${judge_list}]]</p>
+	<a href="/list_learned">覚えたもの一覧へ</a>
+	<a href="/list">一覧へ</a>
+ <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+ <script th:src ="@{/webjars/popper.js/umd/popper.min.js}"></script>
+ <script th:src ="@{/webjars/bootstrap/js/bootstrap.min.js}"></script >
+ 
+</body>
+</html>

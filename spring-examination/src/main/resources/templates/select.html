@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,　initial-scale=1">
+<title>Insert title here</title>
+</head>
+<body>
+
+  <a href="/home">英語</a>
+  
+  	<p>新着一週間の復習単語の数は[[${reminder.counter}]]です。以下に一覧を表示します。</p>
+  
+  <div th:each="list : ${review}" th:inline="text">
+		<div>[[${list.id}]]-[[${list.word}]]-[[${list.partofspeech}]]-[[${list.mean}]]-[[${list.date}]]</div>
+	</div>
+	
+  
+</body>
+</html>

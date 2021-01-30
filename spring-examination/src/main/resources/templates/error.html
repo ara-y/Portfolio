@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div th:attr="data-text=${status}" th:text="${status}"></div>
+<p th:text="${error}"></p>
+<p>ページを表示できません</p>
+<a href="/home">ホームに戻る</a>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+[[${word}]]
+
+<form th:action="@{/word/{word}}" th:object="${searchoption}" method=post>
+
+<div th:each="edit_word_mean : ${edit_word}" th:inline="text">
+[[${edit_word_mean.partofspeech}]]
+
+[[${edit_word_mean.mean}]]
+
+[[${edit_word_mean.id}]]
+
+[[${edit_word_mean.date}]]
+<a th:href="@{/delete/${word}}">
+	<span class="text">削除</span>
+</a>
+
+<a th:href="@{/list}">
+	<span class="text">戻る</span>
+</a>
+<div>
+<input type="radio" th:field="*{toId}" th:value="${edit_word_mean.id}">編集する
+</div>
+<button>確認</button>
+</div>
+</form>
+
+</body>
+</html>

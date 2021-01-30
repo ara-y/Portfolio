@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>一覧</h1>
+	<form th:action="@{/selectword}" th:object="${chainwords}" method=post>
+		
+			<div th:each="words : ${selectword}" th:inline="text">
+				<div>
+					[[${words}]]
+					<input type="checkbox" th:field="*{parts}" th:value="${words}">
+				</div>
+			</div>
+		<button>送信</button>
+	</form>
+	
+	<a href="/list">一覧へ</a>
+</body>
+</html>

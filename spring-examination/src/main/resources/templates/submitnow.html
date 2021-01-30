@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form th:action="@{/submitnow}" th:object="${registerword}" method=post>
+	
+	
+	<label for="word">単語・言葉</label>
+	<textarea th:field="*{word}">[[${word}]]</textarea>
+	
+	<label for="partofspeech">品詞</label>
+	<select th:field="*{partofspeech}">
+		<option value="名詞">名詞</option>
+		<option value="動詞">動詞</option>
+		<option value="形容詞">形容詞</option>
+		<option value="前置詞">前置詞</option>
+		<option value="副詞">副詞</option>
+		<option value="熟語">熟語</option>
+		<option value="ことわざ">ことわざ</option>
+		<option value="接続語">接続語</option>
+	</select>
+	
+	<label for="mean">意味</label>
+	<input type="text" th:field="*{mean}">
+	
+	<button>送信</button>
+	</form>
+	
+	<a href="/list">一覧へ</a>
+</body>
+</html>

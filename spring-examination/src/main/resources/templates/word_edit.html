@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form th:action="@{/word_edit/post}"  th:object="${registerword}" method=post>
+<textarea th:field="*{word}">[[${registerword.word}]]</textarea>	
+
+<textarea th:field="*{partofspeech}">[[${registerword.partofspeech}]]</textarea>	
+
+<textarea th:field="*{mean}">[[${registerword.mean}]]</textarea>	
+
+<button>送信</button>
+</form>
+	
+</body>
+</html>
